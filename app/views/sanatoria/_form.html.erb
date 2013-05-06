@@ -1,0 +1,17 @@
+<%= form_for(@sanatorium) do |f| %>
+  <% if @sanatorium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sanatorium.errors.count, "error") %> prohibited this sanatorium from being saved:</h2>
+
+      <ul>
+      <% @sanatorium.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

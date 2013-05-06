@@ -1,0 +1,27 @@
+<h1>Listing bases</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Enabled</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bases.each do |basis| %>
+  <tr>
+    <td><%= basis.name %></td>
+    <td><%= basis.enabled %></td>
+    <td><%= basis.description %></td>
+    <td><%= link_to 'Show', basis %></td>
+    <td><%= link_to 'Edit', edit_basis_path(basis) %></td>
+    <td><%= link_to 'Destroy', basis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Basis', new_basis_path %>

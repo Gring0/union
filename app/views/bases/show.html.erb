@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @basis.name %>
+</p>
+
+<p>
+  <b>Enabled:</b>
+  <%= @basis.enabled %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @basis.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_basis_path(@basis) %> |
+<%= link_to 'Back', bases_path %>

@@ -1,0 +1,25 @@
+<h1>Listing transport_subsidies</h1>
+
+<table>
+  <tr>
+    <th>Departure</th>
+    <th>Arrival</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transport_subsidies.each do |transport_subsidy| %>
+  <tr>
+    <td><%= transport_subsidy.departure %></td>
+    <td><%= transport_subsidy.arrival %></td>
+    <td><%= link_to 'Show', transport_subsidy %></td>
+    <td><%= link_to 'Edit', edit_transport_subsidy_path(transport_subsidy) %></td>
+    <td><%= link_to 'Destroy', transport_subsidy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transport subsidy', new_transport_subsidy_path %>

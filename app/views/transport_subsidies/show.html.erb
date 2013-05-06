@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Departure:</b>
+  <%= @transport_subsidy.departure %>
+</p>
+
+<p>
+  <b>Arrival:</b>
+  <%= @transport_subsidy.arrival %>
+</p>
+
+
+<%= link_to 'Edit', edit_transport_subsidy_path(@transport_subsidy) %> |
+<%= link_to 'Back', transport_subsidies_path %>

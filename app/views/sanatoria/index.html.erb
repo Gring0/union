@@ -1,0 +1,21 @@
+<h1>Listing sanatoria</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sanatoria.each do |sanatorium| %>
+  <tr>
+    <td><%= link_to 'Show', sanatorium %></td>
+    <td><%= link_to 'Edit', edit_sanatorium_path(sanatorium) %></td>
+    <td><%= link_to 'Destroy', sanatorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sanatorium', new_sanatorium_path %>

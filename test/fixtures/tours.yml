@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  startdate: 2013-05-05
+  enddate: 2013-05-05
+  name: MyString
+  enabled: false
+
+two:
+  type: 
+  startdate: 2013-05-05
+  enddate: 2013-05-05
+  name: MyString
+  enabled: false

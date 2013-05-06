@@ -1,0 +1,2 @@
+module SanatoriaHelper
+end
