@@ -26,7 +26,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 
 # The Role
-gem 'the_role'
+# gem 'the_role'
 
 # Devise
 gem 'devise'
