@@ -58,5 +58,10 @@ module Union
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Фильтрация логирования паролей
+    config.filter_parameters += [:password, :password_confirmation]
+
+    config.i18n.default_locale = :ru
   end
 end

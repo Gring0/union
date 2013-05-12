@@ -26,13 +26,29 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 
 # The Role
-gem 'the_role'
+# gem 'the_role'
 
 # Devise
 gem 'devise'
 
+# CanCan
+gem 'cancan'
+
+# Simple Form
+gem 'simple_form'
+
+# Figaro
+gem 'figaro'
+
+# Rolify
+gem 'rolify'
+
+# Localisation
+gem 'rails-i18n'
+gem 'russian'
+
 # Slim
-gem 'slim-rails'
+# gem 'slim-rails'
 
 # Haml
 # gem 'haml'
