@@ -1,0 +1,11 @@
+= form_for(@subsidy) do |f|
+  - if @subsidy.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@subsidy.errors.count, "error")
+        prohibited this subsidy from being saved:
+      %ul
+        - @subsidy.errors.full_messages.each do |msg|
+          %li= msg
+  .actions
+    = f.submit

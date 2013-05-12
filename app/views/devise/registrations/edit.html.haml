@@ -1,0 +1,13 @@
+%h2 Редактирование профиля
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f|
+  = f.error_notification
+  = f.input :name, :autofocus => true, :label => "Имя"
+  = f.input :email, :required => true, :label => "Электронная почта"
+  = f.input :password, :autocomplete => "off", :hint => "оставьте пустым, если не хотите изменять", :required => false, :label => "Пароль"
+  = f.input :password_confirmation, :required => false, :label => "Подтверждение пароля"
+  = f.input :current_password, :hint => "введите пароль для подтверждения изменений", :required => true, :label => "Текущий пароль"
+  = f.button :submit, 'Обновить', :class => 'btn-primary'
+%p
+  = link_to "Удалить профиль", registration_path(resource_name), :data => { :confirm => "Вы уверены?" }, :method => :delete
+  \.
+= link_to "Назад", :back

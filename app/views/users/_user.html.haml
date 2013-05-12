@@ -1,0 +1,10 @@
+.modal{:id => "role-options-#{user.id}", :style => "display: none;"}
+  = simple_form_for user, :url => user_path(user), :html => {:method => :put, :class => 'form-horizontal' } do |f|
+    .modal-header
+      %a.close{"data-dismiss" => "modal"} ×
+      %h3 Изменить роль
+    .modal-body
+      = f.input :role_ids, :collection => Role.all, :as => :radio_buttons, :label_method => lambda {|t| t.russian_name.titleize}, :label => false, :item_wrapper_class => 'inline', checked: user.role_ids.first
+    .modal-footer
+      = f.submit "Изменить роль", :class => "btn"
+      %a.btn{"data-dismiss" => "modal", :href => "#"} Закрыть

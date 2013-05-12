@@ -1,0 +1,17 @@
+%h1 Listing transport_subsidies
+%table
+  %tr
+    %th Departure
+    %th Arrival
+    %th
+    %th
+    %th
+  - @transport_subsidies.each do |transport_subsidy|
+    %tr
+      %td= transport_subsidy.departure
+      %td= transport_subsidy.arrival
+      %td= link_to 'Show', transport_subsidy
+      %td= link_to 'Edit', edit_transport_subsidy_path(transport_subsidy)
+      %td= link_to 'Destroy', transport_subsidy, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Transport subsidy', new_transport_subsidy_path

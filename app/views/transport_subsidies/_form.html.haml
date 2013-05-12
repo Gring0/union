@@ -1,0 +1,19 @@
+= form_for(@transport_subsidy) do |f|
+  - if @transport_subsidy.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@transport_subsidy.errors.count, "error")
+        prohibited this transport_subsidy from being saved:
+      %ul
+        - @transport_subsidy.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :departure
+    %br/
+    = f.text_field :departure
+  .field
+    = f.label :arrival
+    %br/
+    = f.text_field :arrival
+  .actions
+    = f.submit

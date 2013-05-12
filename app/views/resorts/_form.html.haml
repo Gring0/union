@@ -1,0 +1,15 @@
+= form_for(@resort) do |f|
+  - if @resort.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@resort.errors.count, "error")
+        prohibited this resort from being saved:
+      %ul
+        - @resort.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :tour_id
+    %br/
+    = f.number_field :tour_id
+  .actions
+    = f.submit

@@ -51,8 +51,8 @@ gem 'russian'
 # gem 'slim-rails'
 
 # Haml
-# gem 'haml'
-# gem 'haml-rails'
+gem 'haml'
+gem 'haml-rails'
 
 # Active Admin
 #gem 'activeadmin'

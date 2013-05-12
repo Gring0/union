@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %b Type:
+  = @tour.type
+%p
+  %b Startdate:
+  = @tour.startdate
+%p
+  %b Enddate:
+  = @tour.enddate
+%p
+  %b Name:
+  = @tour.name
+%p
+  %b Enabled:
+  = @tour.enabled
+= link_to 'Edit', edit_tour_path(@tour)
+|
+\#{link_to 'Back', tours_path}

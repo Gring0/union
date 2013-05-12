@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %b Tour:
+  = @resort.tour_id
+= link_to 'Edit', edit_resort_path(@resort)
+|
+\#{link_to 'Back', resorts_path}

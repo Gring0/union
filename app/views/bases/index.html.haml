@@ -1,0 +1,19 @@
+%h1 Listing bases
+%table
+  %tr
+    %th Name
+    %th Enabled
+    %th Description
+    %th
+    %th
+    %th
+  - @bases.each do |basis|
+    %tr
+      %td= basis.name
+      %td= basis.enabled
+      %td= basis.description
+      %td= link_to 'Show', basis
+      %td= link_to 'Edit', edit_basis_path(basis)
+      %td= link_to 'Destroy', basis, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Basis', new_basis_path

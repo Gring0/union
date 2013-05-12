@@ -1,0 +1,13 @@
+%h1 Listing subsidies
+%table
+  %tr
+    %th
+    %th
+    %th
+  - @subsidies.each do |subsidy|
+    %tr
+      %td= link_to 'Show', subsidy
+      %td= link_to 'Edit', edit_subsidy_path(subsidy)
+      %td= link_to 'Destroy', subsidy, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Subsidy', new_subsidy_path

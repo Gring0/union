@@ -1,0 +1,11 @@
+= form_for(@sanatorium) do |f|
+  - if @sanatorium.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@sanatorium.errors.count, "error")
+        prohibited this sanatorium from being saved:
+      %ul
+        - @sanatorium.errors.full_messages.each do |msg|
+          %li= msg
+  .actions
+    = f.submit

@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @basis.name
+%p
+  %b Enabled:
+  = @basis.enabled
+%p
+  %b Description:
+  = @basis.description
+= link_to 'Edit', edit_basis_path(@basis)
+|
+\#{link_to 'Back', bases_path}

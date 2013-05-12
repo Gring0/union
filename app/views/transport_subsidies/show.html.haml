@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %b Departure:
+  = @transport_subsidy.departure
+%p
+  %b Arrival:
+  = @transport_subsidy.arrival
+= link_to 'Edit', edit_transport_subsidy_path(@transport_subsidy)
+|
+\#{link_to 'Back', transport_subsidies_path}

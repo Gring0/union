@@ -1,0 +1,13 @@
+%h1 Listing sanatoria
+%table
+  %tr
+    %th
+    %th
+    %th
+  - @sanatoria.each do |sanatorium|
+    %tr
+      %td= link_to 'Show', sanatorium
+      %td= link_to 'Edit', edit_sanatorium_path(sanatorium)
+      %td= link_to 'Destroy', sanatorium, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Sanatorium', new_sanatorium_path
