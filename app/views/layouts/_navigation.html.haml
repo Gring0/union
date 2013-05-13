@@ -5,7 +5,7 @@
       = link_to('Профиль', edit_user_registration_path)
     - if current_user.has_role? :admin
       %li
-        = link_to('Управление', users_path)
+        = link_to('Управление', admin_root_path)
   - else
     %li
       = link_to('Зарегистрироваться', new_user_registration_path)

@@ -1,4 +1,5 @@
 Union::Application.routes.draw do
+
   get "home/index"
 
   resources :social_activities
@@ -88,6 +89,9 @@ Union::Application.routes.draw do
 
 
   resources :users
+
+
+  ActiveAdmin.routes(self)
 
 
   # See how all your routes lay out with "rake routes"

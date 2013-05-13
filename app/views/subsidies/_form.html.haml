@@ -1,11 +1,5 @@
-= form_for(@subsidy) do |f|
-  - if @subsidy.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@subsidy.errors.count, "error")
-        prohibited this subsidy from being saved:
-      %ul
-        - @subsidy.errors.full_messages.each do |msg|
-          %li= msg
-  .actions
-    = f.submit
+= simple_form_for(@subsidy) do |f|
+  = f.error_notification
+  = f.association :subsidy_type, :required => true, :label => "Тип выплаты"
+  = f.association :basis, :required => true, :label => "Обоснование выплаты"
+  = f.button :submit, 'Подать заявление', :class => 'btn-primary'
