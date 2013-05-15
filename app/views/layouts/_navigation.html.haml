@@ -2,7 +2,7 @@
 %ul.nav.nav-pills.pull-right
   - if user_signed_in?
     %li
-      = link_to('Профиль', edit_user_registration_path)
+      = link_to(current_user.name, edit_user_registration_path)
     - if current_user.has_role? :admin
       %li
         = link_to('Управление', admin_root_path)

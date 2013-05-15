@@ -14,6 +14,10 @@ class SubsidiesController < ApplicationController
   # GET /subsidies/1.json
   def show
     @subsidy = Subsidy.find(params[:id])
+    @order = @subsidy.order
+    @user = @order.user
+    @type = @subsidy.subsidy_type
+    @basis = @subsidy.basis
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,11 +44,14 @@ class SubsidiesController < ApplicationController
   # POST /subsidies
   # POST /subsidies.json
   def create
-    @subsidy = Subsidy.new(params[:subsidy])
+    @subsidy  = Subsidy.new params[:subsidy]
+    if @subsidy.save
+      @order = @subsidy.create_order(user_id: current_user.id)
+    end
 
     respond_to do |format|
       if @subsidy.save
-        format.html { redirect_to @subsidy, notice: 'Subsidy was successfully created.' }
+        format.html { redirect_to @subsidy, notice: 'Заявка на материальную выплату успешно создана.' }
         format.json { render json: @subsidy, status: :created, location: @subsidy }
       else
         format.html { render action: "new" }
@@ -60,7 +67,7 @@ class SubsidiesController < ApplicationController
 
     respond_to do |format|
       if @subsidy.update_attributes(params[:subsidy])
-        format.html { redirect_to @subsidy, notice: 'Subsidy was successfully updated.' }
+        format.html { redirect_to @subsidy, notice: 'Заявка на материальную выплату успешно обновлена.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -44,7 +44,7 @@ class SubsidyTypesController < ApplicationController
 
     respond_to do |format|
       if @subsidy_type.save
-        format.html { redirect_to @subsidy_type, notice: 'Subsidy type was successfully created.' }
+        format.html { redirect_to @subsidy_type, notice: 'Тип материальной выплаты успешно добавлен.' }
         format.json { render json: @subsidy_type, status: :created, location: @subsidy_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class SubsidyTypesController < ApplicationController
 
     respond_to do |format|
       if @subsidy_type.update_attributes(params[:subsidy_type])
-        format.html { redirect_to @subsidy_type, notice: 'Subsidy type was successfully updated.' }
+        format.html { redirect_to @subsidy_type, notice: 'Тип материальной выплаты успешно обновлён.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

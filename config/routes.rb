@@ -1,6 +1,10 @@
 Union::Application.routes.draw do
 
+  resources :students
+
+
   get "home/index"
+
 
   resources :social_activities
 
@@ -30,6 +34,9 @@ Union::Application.routes.draw do
 
 
   resources :orders
+
+
+  resources :student
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

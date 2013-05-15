@@ -1,5 +1,5 @@
-%h3 Пользователи
-.span8
+.span12
+  %h3 Пользователи
   %table.table.table-condensed
     %thead
       %tr
@@ -17,6 +17,6 @@
           %td= user.created_at.to_date
           %td= user.roles.first.russian_name.titleize unless user.roles.first.nil?
           %td
-            %a.btn.btn-mini{"data-toggle" => "modal", :href => "#role-options-#{user.id}", :type => "button"} Изменить роль
+            %a.btn{"data-toggle" => "modal", :href => "#role-options-#{user.id}", :type => "button"} Изменить роль
             = render user
-          %td= link_to("Удалить", user_path(user), :data => { :confirm => "Вы уверены?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user
+          %td= link_to("Удалить", user_path(user), :data => { :confirm => "Вы уверены?" }, :method => :delete, :class => 'btn') unless user == current_user

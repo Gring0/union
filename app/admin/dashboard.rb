@@ -1,4 +1,5 @@
 ActiveAdmin.register_page "Dashboard" do
+  menu false
 
   menu :priority => 1, :label => "Обзор"
 

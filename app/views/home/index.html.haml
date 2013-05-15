@@ -1,17 +1,15 @@
 - if user_signed_in?
-  .row
-    .span6
-      = link_to "Материальная помощь", new_subsidy_path, {:class=>"btn btn-large btn-block"}
-      %br/
-      = link_to "Компенсация проезда", new_transport_subsidy_path, {:class=>"btn btn-large btn-block"}
-      %br/
-    .span6
-      = link_to "Профилакторий", new_sanatorium_path, {:class=>"btn btn-large btn-block"}
+  .span6
+    = link_to "Материальная помощь", new_subsidy_path, {:class=>"btn btn-large btn-block"}
+    %br/
+    = link_to "Компенсация проезда", new_transport_subsidy_path, {:class=>"btn btn-large btn-block"}
+  .span6
+    = link_to "Профилакторий", new_sanatorium_path, {:class=>"btn btn-large btn-block"}
+    %br/
+    = link_to "Компенсация мероприятия", new_event_path, {:class=>"btn btn-large btn-block"}
+    -if current_user.has_role? :group_organizer
       %br/
       = link_to "Летний отдых", new_resort_path, {:class=>"btn btn-large btn-block"}
-      %br/
-    .span6.offset3
-      = link_to "Компенсация мероприятия", new_event_path, {:class=>"btn btn-large btn-block"}
 - else
   .span6.offset3
     = link_to "Войти", new_user_session_path, {:class=>"btn btn-large btn-block"}
