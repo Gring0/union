@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_found
-    flash[:error] = "Ошибка 404: страница не найдена"
-    render '/home/error', :status => 404
+    render '/home/404', :status => 404
   end
 end

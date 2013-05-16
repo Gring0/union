@@ -1,0 +1,60 @@
+<contingent>
+  <students>
+    <student>
+      <uuid>67b8a137-8636-4c20-9649-00000001b501</uuid>
+      <lastName>Алексеева</lastName>
+      <firstName>Елена</firstName>
+      <middleName>Андреевна</middleName>
+      <cardNumber>07У010</cardNumber>
+      <birthDate>1990-09-22</birthDate>
+      <group>
+        <uuid>0bc88e92-e73e-11db-89c3-000cf1a7cbf0</uuid>
+        <titleshort>ИУ2-63</titleshort>
+      </group>
+      <studyType>
+        <uuid>14179986-d597-11dc-85d7-003048351d16</uuid>
+        <name>Бюджетная</name>
+      </studyType>
+      <studentState>
+        <uuid>e8d8a7d8-d596-11dc-9609-003048351d16</uuid>
+        <name>Обучается</name>
+      </studentState>
+      <militaryState>
+        <uuid>24435d7c-d498-11dc-a338-003048351d16</uuid>
+        <name>Не обучается</name>
+      </militaryState>
+      <gender>
+        <uuid>db7cd564-d596-11dc-b2f1-003048351d16</uuid>
+        <name>Женский</name>
+      </gender>
+      <guimc>
+        <uuid>69b4ef2e-35c1-11df-8128-003048c6b34e</uuid>
+        <name>Нет</name>
+      </guimc>
+      <orisa>
+        <uuid>10889478-35c2-11df-8128-003048c6b34e</uuid>
+        <name>Нет</name>
+      </orisa>
+      <isHandicap>false</isHandicap>
+      <isOrisa>false</isOrisa>
+      <citizenship>
+        <uuid>a115db60-d635-11dc-bb0c-003048351d16</uuid>
+        <name>Гражданин РФ</name>
+      </citizenship>
+      <enrollment>
+        <uuid>1dec90f0-35ca-11df-8128-003048c6b34e</uuid>
+        <name>Общий конкурс</name>
+      </enrollment>
+      <dormitory>
+        <uuid>685e5538-d499-11dc-a344-003048351d16</uuid>
+        <name>Нет</name>
+      </dormitory>
+      <speciality>
+        <id>755d5c10-d3c2-11da-88e9-000874220790</id>
+        <name>1604020265</name>
+        <speciality>Приборы и системы ориентации, стабилизации и навигации</speciality>
+        <qualification>Инженер</qualification>
+      </speciality>
+    </student>
+  </students>
+</contingent>

@@ -1,21 +1,30 @@
 class StudentController < ApplicationController
+
   def index
-    #require 'ox'
+    require 'open-uri'
 
-    response = Typhoeus.get("https://eu.bmstu.ru/modules/contingent/service/xml/students/?search[uuid]=67b8a137-8636-4c20-9649-00000001d83b", ssl_verifypeer: false)
-    body = response.body.force_encoding("UTF-8")
-    @student = Ox.parse(body)
+    url = "https://eu.bmstu.ru/modules/contingent/service/xml/students/?view=oldschool"
+    query = { :fio => "Фуксман", :group => "ИУ5-85",  :card_number => "09У282"}
+    response = open(url+"&"+query.to_param('search'), :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)
+    response = response.read.force_encoding("UTF-8")
 
-    #@response.force_encoding("UTF-8")!
-=begin
-    require 'net/https'
+    # пример возвращаемого результата
+    # response = File.new('/Users/fuksman/union/public/bmstu.xml')
 
-    url = URI.parse('https://eu.bmstu.ru/modules/contingent/service/xml/students/?search[uuid]=67b8a137-8636-4c20-9649-00000001d83b')
-    http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = (url.scheme == 'https')
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    req = Net::HTTP::Get.new(url.request_uri)
-    @res = http.request(req)
-=end
+    contingent = Hash.from_xml(response)
+    student = contingent["contingent"]["students"]["student"]
+    uuid = student["uuid"].to_s
+    name = student["lastName"].to_s+" "+student["firstName"].to_s+" "+student["middleName"].to_s
+    academy_group = student["group"]["titleshort"]
+    study_type =  student["studyType"]["name"]
+    state =  student["studentState"]["name"]
+    @student_info = {
+        :uuid => uuid,
+        :name => name,
+        :academy_group => academy_group,
+        :study_type => study_type,
+        :state => state
+    }
+
   end
 end
