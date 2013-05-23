@@ -1,3 +1,12 @@
 .span12
-  - @student_info.each do |k, v|
-    %p #{ k }: #{ v }
+  -if current_user.uuid.nil?
+    %h2 Создание привязки
+    = form_tag search_student_index_path, :method => :get, :class => 'simple_form form-vertical' do
+      = label_tag :fio, "Фамилия"
+      = text_field_tag :fio, current_user.name
+      = label_tag :group, "Академическая группа"
+      = text_field_tag :group, current_user.academy_group
+      = label_tag :card_number, "Номер зачётной книжки"
+      = text_field_tag :card_number, current_user.card_number
+      %br/
+      = submit_tag "Найти в «Электронном университете»", :class => "btn btn-primary"

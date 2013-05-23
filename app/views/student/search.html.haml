@@ -1,0 +1,18 @@
+.span12
+  -#= simple_form_for(:user, :url => edit_user_registration_path, :html => { :method => :put, :class => 'form-vertical' }) do |f|
+  -#  = f.input :name, :disabled => true, :input_html => { :value => "#{@student_info[:name]}" }, :label => "ФИО"
+  -#  = f.input :academy_group, :disabled => true, :input_html => { :value => "#{@student_info[:name]}" }, :label => "ФИО"
+  -#  = f.input :name, :disabled => true, :input_html => { :value => "#{@student_info[:name]}" }, :label => "ФИО"
+  -#  = f.button :submit, 'Создать привязку', :class => 'btn-primary'
+  .well
+    ФИО: #{@student_info[:name]}
+    %br/
+    Группа: #{@student_info[:academy_group]}
+    %br/
+    Зачётная книжка: #{@student_info[:card_number]}
+  %p
+    = link_to "Это я!", edit_user_path(@student_info), { :class => "btn btn-primary" }
+  %br/
+  %br/
+  %p
+    = link_to "Назад", :back, { :class => "btn" }

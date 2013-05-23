@@ -1,6 +1,13 @@
 class SubsidiesController < ApplicationController
   # GET /subsidies
   # GET /subsidies.json
+
+=begin
+  unless user_signed_in?
+    redirect_to root_path, flash[:error] => "Пожалуйста, войдите в систему, чтобы продолжить"
+  end
+=end
+
   def index
     @subsidies = Subsidy.all
 
@@ -28,6 +35,7 @@ class SubsidiesController < ApplicationController
   # GET /subsidies/new
   # GET /subsidies/new.json
   def new
+    current_user.update_student_info
     @subsidy = Subsidy.new
 
     respond_to do |format|
@@ -46,7 +54,7 @@ class SubsidiesController < ApplicationController
   def create
     @subsidy  = Subsidy.new params[:subsidy]
     if @subsidy.save
-      @order = @subsidy.create_order(user_id: current_user.id)
+      @order = @subsidy.create_order(user_id: current_user.id, current_academy_group: current_user.academy_group, current_student_name: current_user.name )
     end
 
     respond_to do |format|

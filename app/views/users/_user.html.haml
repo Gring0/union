@@ -4,7 +4,7 @@
       %a.close{"data-dismiss" => "modal"} ×
       %h3 Изменить роль
     .modal-body
-      = f.input :role_ids, :collection => Role.all, :as => :radio_buttons, :label_method => lambda {|t| t.russian_name.titleize}, :label => false, :item_wrapper_class => 'inline', checked: user.role_ids.first
+      = f.collection_check_boxes :role_ids, Role.all, :id, :russian_name
     .modal-footer
       = f.submit "Изменить роль", :class => "btn"
       %a.btn{"data-dismiss" => "modal", :href => "#"} Закрыть

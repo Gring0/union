@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
 
+  rescue_from Errno::ETIMEDOUT, :with => :timeout
+
   def authenticate_admin_user!
     redirect_to new_user_session_path unless (!current_user.nil? and (current_user.has_role? :admin))
   end
@@ -19,5 +21,10 @@ class ApplicationController < ActionController::Base
 
   def not_found
     render '/home/404', :status => 404
+  end
+
+  def timeout
+    redirect_to student_index_path
+    flash[:error] = "Нет связи с «Электронном Университетом». Пожалуйста, попробуйте повторить операцию позже"
   end
 end

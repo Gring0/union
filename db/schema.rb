@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516200204) do
+ActiveRecord::Schema.define(:version => 20130523135240) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -42,13 +42,14 @@ ActiveRecord::Schema.define(:version => 20130516200204) do
 
   create_table "orders", :force => true do |t|
     t.string   "type"
-    t.string   "current_study_group"
+    t.string   "current_academy_group"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
     t.string   "actual_social_activity"
     t.integer  "user_id"
     t.integer  "orderable_id"
     t.string   "orderable_type"
+    t.string   "current_student_name"
   end
 
   create_table "resorts", :force => true do |t|
@@ -69,12 +70,6 @@ ActiveRecord::Schema.define(:version => 20130516200204) do
 
   create_table "sanatoria", :force => true do |t|
     t.integer "tour_id"
-  end
-
-  create_table "social_activities", :force => true do |t|
-    t.string  "name"
-    t.boolean "enabled"
-    t.text    "description"
   end
 
   create_table "subsidies", :force => true do |t|
@@ -128,13 +123,14 @@ ActiveRecord::Schema.define(:version => 20130516200204) do
     t.string   "street"
     t.string   "building"
     t.string   "apartments"
-    t.string   "study_type"
     t.boolean  "have_debts"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "social_activity"
     t.integer  "social_activity_id"
     t.string   "uuid"
+    t.string   "card_number"
+    t.boolean  "enabled"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

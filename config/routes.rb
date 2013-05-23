@@ -1,6 +1,8 @@
 Union::Application.routes.draw do
 
-  resources :students
+  resources :student do
+    get :search, :on => :collection
+  end
 
 
   get "home/index"

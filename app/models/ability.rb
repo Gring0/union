@@ -8,8 +8,10 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     else
-      can :manage, Subsidy, :order => { :user_id => user.id}
+      cannot :manage, Subsidy
     end
+
+
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

@@ -2,14 +2,14 @@
   <students>
     <student>
       <uuid>67b8a137-8636-4c20-9649-00000001b501</uuid>
-      <lastName>Алексеева</lastName>
-      <firstName>Елена</firstName>
-      <middleName>Андреевна</middleName>
-      <cardNumber>07У010</cardNumber>
+      <lastName>Фуксман</lastName>
+      <firstName>Сергей</firstName>
+      <middleName>Игоревич</middleName>
+      <cardNumber>09У282</cardNumber>
       <birthDate>1990-09-22</birthDate>
       <group>
         <uuid>0bc88e92-e73e-11db-89c3-000cf1a7cbf0</uuid>
-        <titleshort>ИУ2-63</titleshort>
+        <titleshort>ИУ5-85</titleshort>
       </group>
       <studyType>
         <uuid>14179986-d597-11dc-85d7-003048351d16</uuid>
